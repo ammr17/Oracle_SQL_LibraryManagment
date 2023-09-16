@@ -1,0 +1,5 @@
+UPDATE userlib
+SET name = 'Aiman Shuhaikal', address = 'UTP V1B'
+WHERE userID = 4;
+
+DELETE FROM USERLIB WHERE name = 'Syukran';

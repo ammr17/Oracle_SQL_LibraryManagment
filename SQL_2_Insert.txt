@@ -1,0 +1,407 @@
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (1, 'Iman Kamil', '+601133798271', '123 Main Street', 'Platinum users can benefit up to 30 books per session if they want to borrow', '10-11-2003', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (2, 'Hazim', '+601253392271', '543 Main Street', 'STAFF', '2003-02-06', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (3, 'Hariz', '+601793410004', 'UTP V3A', NULL, '2003-03-01', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (4, 'Imran', '+601455798371', 'UTP V2', NULL, '2003-05-10', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (5, 'Aqil Fauzan', '+601342711710', '123 UTP', NULL, '2003-10-09', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (6, 'Haziq', '+601742711710', 'UTP V1B', NULL, '2003-10-09', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (7, 'Ammar', '+601143711710', 'UTP V1A', NULL, '2003-08-07', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (8, 'Afif', '+601143710800', 'UTP V3A', NULL, '2003-06-07', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (9, 'Zahin', '+601243711690', 'UTP V3A', NULL, '2003-05-07', NULL);
+
+INSERT INTO USERLIB (userID, name, phoneNo, address, privilege, dateOfBirth, userPhoto)
+VALUES (10, 'Syukran', '+601343722710', 'UTP V5A', NULL, '2003-04-07', NULL);
+
+INSERT INTO MEMBERSHIP (memberID, memberType, startDate, endDate, memberEmail, memberStatus, borrowLimit)
+VALUES (1, 'Gold', '2019-11-12', '2020-12-20', 'imankamil@gmail.com', 'Active', 10);
+
+INSERT INTO MEMBERSHIP (memberID, memberType, startDate, endDate, memberEmail, memberStatus, borrowLimit)
+VALUES (2, 'Gold', '2020-11-12', '2020-12-20', 'asdf@gmail.com', 'Active', 10);
+
+INSERT INTO MEMBERSHIP (memberID, memberType, startDate, endDate, memberEmail, memberStatus, borrowLimit)
+VALUES (3, 'Gold', '2019-11-12', '2020-12-12', 'convert@gmail.com', 'Active', 10);
+
+INSERT INTO MEMBERSHIP (memberID, memberType, startDate, endDate, memberEmail, memberStatus, borrowLimit)
+VALUES (4, 'Gold', '2019-11-12', '2020-12-12', 'zakres@gmail.com', 'Active', 10);
+
+INSERT INTO MEMBERSHIP (memberID, memberType, startDate, endDate, memberEmail, memberStatus, borrowLimit)
+VALUES (5, 'Gold', '2019-11-12', '2020-12-12', 'imi32@gmail.com', 'Active', 10);
+
+INSERT INTO BORROWER (borrowerID, userID, memberID)
+VALUES (1, 1, 1);
+
+INSERT INTO BORROWER (borrowerID, userID, memberID)
+VALUES (2, 3, 2);
+
+INSERT INTO BORROWER (borrowerID, userID, memberID)
+VALUES (3, 4, 3);
+
+INSERT INTO BORROWER (borrowerID, userID, memberID)
+VALUES (4, 5, 4);
+
+INSERT INTO BORROWER (borrowerID, userID, memberID)
+VALUES (5, 7, 5);
+
+INSERT INTO STAFF (staffID, staffRole, userID)
+VALUES (1, 'Manager', 2);
+
+INSERT INTO STAFF (staffID, staffRole, userID)
+VALUES (2, 'Staff', 6);
+
+INSERT INTO STAFF (staffID, staffRole, userID)
+VALUES (3, 'Staff', 8);
+
+INSERT INTO STAFF (staffID, staffRole, userID)
+VALUES (4, 'Staff', 9);
+
+INSERT INTO STAFF (staffID, staffRole, userID)
+VALUES (5, 'Staff', 10);
+
+INSERT INTO AUTHOR (authorID, authorName)
+VALUES (10, 'Izhar Nordin');
+
+INSERT INTO AUTHOR (authorID, authorName)
+VALUES (11, 'Aisyah Zakaria');
+
+INSERT INTO AUTHOR (authorID, authorName)
+VALUES (12, 'Haiqal Zulkifli');
+
+INSERT INTO AUTHOR (authorID, authorName)
+VALUES (13, 'James Broke');
+
+INSERT INTO AUTHOR (authorID, authorName)
+VALUES (14, 'Zeta');
+
+INSERT INTO PUBLISHER (publisherID, publisherName, publisherPhone)
+VALUES ('MPH1005', 'MPH', '12-345678');
+
+INSERT INTO PUBLISHER (publisherID, publisherName, publisherPhone)
+VALUES ('FBK103', 'Fubuki', '12-345678');
+
+INSERT INTO PUBLISHER (publisherID, publisherName, publisherPhone)
+VALUES ('TWA33', 'Towa Publications', '12-345678');
+
+INSERT INTO PUBLISHER (publisherID, publisherName, publisherPhone)
+VALUES ('DBS67', 'DBS', '12-345678');
+
+INSERT INTO PUBLISHER (publisherID, publisherName, publisherPhone)
+VALUES ('GRU34', 'Gru', '12-345678');
+
+INSERT INTO GENRE (genreID, genreName, genreDesc)
+VALUES (1, 'Horror', 'Horror is scary');
+
+INSERT INTO GENRE (genreID, genreName, genreDesc)
+VALUES (2, 'Fantasy', 'Out of the world');
+
+INSERT INTO GENRE (genreID, genreName, genreDesc)
+VALUES (3, 'Sci-fi', 'Science Fiction');
+
+INSERT INTO GENRE (genreID, genreName, genreDesc)
+VALUES (4, 'Romance', 'Romantic');
+
+INSERT INTO GENRE (genreID, genreName, genreDesc)
+VALUES (5, 'Drama', 'Drama');
+
+INSERT INTO GENRE (genreID, genreName, genreDesc)
+VALUES (6, 'Adventure', 'Adventure Stuff');
+
+INSERT INTO GENREBOOK (genKey,  genreID)
+VALUES ('HPPS', 1);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('HPPS', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('PINNO2', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('PINNO2', 5);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF1', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF1', 5);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF1', 6);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('HUNGER2', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('HUNGER2', 5);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('HUNGER2', 6);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('NARNIA1', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('NARNIA1', 4);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('NARNIA1', 6);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('NARNIA2', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('NARNIA2', 4);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('NARNIA2', 6);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF2', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF2', 3);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF2', 4);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('ASOIAF2', 6);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('HUNGER3', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('HUNGER3', 6);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('DUNE1', 2);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('DUNE1', 5);
+
+INSERT INTO GENREBOOK (genKey, genreID)
+VALUES ('DUNE1', 6);
+
+
+INSERT INTO SHELF (shelfID, shelfName, shelfCapacity)
+VALUES ('1-A', 'Section 1A', 14);
+
+INSERT INTO SHELF (shelfID, shelfName, shelfCapacity)
+VALUES ('1-B', 'Section 1B', 10);
+
+INSERT INTO SHELF (shelfID, shelfName, shelfCapacity)
+VALUES ('1-C', 'Section 1C', 10);
+
+INSERT INTO SHELF (shelfID, shelfName, shelfCapacity)
+VALUES ('2-A', 'Section 2A', 15);
+
+INSERT INTO SHELF (shelfID, shelfName, shelfCapacity)
+VALUES ('2-B', 'Section 2B', 13);
+
+INSERT INTO SHELF (shelfID, shelfName, shelfCapacity)
+VALUES ('2-C', 'Section 2C', 13);
+
+INSERT INTO LANGUAGELIB (langID, langName)
+VALUES ('MYS', 'Malay');
+
+INSERT INTO LANGUAGELIB (langID, langName)
+VALUES ('ENG', 'English');
+
+INSERT INTO LANGUAGELIB (langID, langName)
+VALUES ('BRZ', 'Brazil');
+
+INSERT INTO LANGUAGELIB (langID, langName)
+VALUES ('CHN', 'Chinese');
+
+INSERT INTO LANGUAGELIB (langID, langName)
+VALUES ('JPN', 'Japanese');
+
+INSERT INTO RATING (ratingID, ratingName, ratingDesc)
+VALUES (395, '5 Stars', 'Strongly agree');
+
+INSERT INTO RATING (ratingID, ratingName, ratingDesc)
+VALUES (394, '4 Stars', 'Great read');
+
+INSERT INTO RATING (ratingID, ratingName, ratingDesc)
+VALUES (393, '3 Stars', 'Nice');
+
+INSERT INTO RATING (ratingID, ratingName, ratingDesc)
+VALUES (392, '2 Stars', 'Not that good');
+
+INSERT INTO RATING (ratingID, ratingName, ratingDesc)
+VALUES (391, '1 Stars', 'Bad');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('HP12', 'Harry Potter series', 'Harry Potter is a series of novels by British author J.K. Rowling.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('PINNOCHIO', 'Pinnochio series', 'Pinnochio is a woodman with a long nose.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('NARNIA', 'The Chronicles of Narnia', 'The Chronicles of Narnia is a series of fantasy novels by C.S. Lewis.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('LOTR', 'The Lord of the Rings', 'The Lord of the Rings is an epic high-fantasy series by J.R.R. Tolkien.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('ASOIAF', 'A Song of Ice and Fire', 'A Song of Ice and Fire is a series of epic fantasy novels by George R.R. Martin.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('HUNGER', 'The Hunger Games Trilogy', 'The Hunger Games Trilogy is a dystopian adventure series by Suzanne Collins.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('DUNE', 'Dune Chronicles', 'The Dune Chronicles is a science fiction series by Frank Herbert.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('POTC', 'Pirates of the Caribbean', 'Pirates of the Caribbean is a series of fantasy adventure novels based on the film franchise.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('TWILIGHT', 'Twilight Saga', 'The Twilight Saga is a series of vampire-themed romance novels by Stephenie Meyer.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('PJO', 'Percy Jackson & The Olympians', 'Percy Jackson & The Olympians is a series of fantasy-adventure novels by Rick Riordan.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('HDM', 'His Dark Materials', 'His Dark Materials is a trilogy of fantasy novels by Philip Pullman.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('GOT', 'A Series of Unfortunate Events', 'A Series of Unfortunate Events is a series of childrens novels by Lemony Snicket.');
+
+INSERT INTO BOOKSERIES (seriesID, seriesTitle, seriesDesc)
+VALUES ('NINA', 'Nancy Drew Mystery Stories', 'Nancy Drew Mystery Stories is a series of detective novels featuring the character Nancy Drew.');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('370-345678901', 'A Game of Thrones', 'The first book in the A Song of Ice and Fire series, it follows the power struggles in the Seven Kingdoms.', 694, 'Completed', NULL, 'ASOIAF1', 10, 394, 'GRU34', 'ASOIAF', 'ENG', '1-C');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('415-345678902', 'Catching Fire', 'The second book in The Hunger Games Trilogy, it continues the story of Katniss Everdeen in the dystopian world of Panem.', 472, 'Completed', NULL, 'HUNGER2', 11, 392, 'TWA33', 'HUNGER', 'ENG', '1-A');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('500-234567890', 'The Lion, the Witch and the Wardrobe', 'Four children discover a magical wardrobe that leads to the land of Narnia.', 200, 'Completed', NULL, 'NARNIA1', 12, 394, 'DBS67', 'NARNIA', 'ENG', '1-B');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('652-234567891', 'Prince Caspian', 'The Pevensie siblings return to Narnia and help Prince Caspian in his fight against the Telmarines.', 250, 'Ongoing', NULL, 'NARNIA2', 12, 395, 'DBS67', 'NARNIA', 'ENG', '2-B');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('302-123456789', 'A Clash of Kings', 'The second book in the A Song of Ice and Fire series, it continues the epic saga of Westeros and its noble families.', 768, 'Ongoing', NULL, 'ASOIAF2', 13, 393, 'GRU34', 'ASOIAF', 'ENG', '2-C');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('105-123456789', 'Mockingjay', 'The final book in The Hunger Games Trilogy, it depicts the ultimate battle for survival in Panem.', 400, 'Completed', NULL, 'HUNGER3', 14, 393, 'TWA33', 'HUNGER', 'ENG', '2-A');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('101-123456789', 'Dune', 'The first book in the Dune Chronicles, it explores a desert planet called Arrakis and its valuable resource.', 412, 'Completed', NULL, 'DUNE1', 10, 394, 'FBK103', 'DUNE', 'ENG', '1-A');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('978-123456789', 'Harry Potter and the Philosophers Stone', 'Get ready to dive into the adventure of Harry Potter', 150, 'Ongoing', NULL, 'HPPS', 10, 395, 'MPH1005', 'HP12', 'MYS', '1-A');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('133-123456789', 'Harry Potter 2', 'Sequel of Harry Potter', 100, 'Ongoing', NULL, 'HPPS', 11, 394, 'MPH1005', 'HP12', 'MYS', '1-B');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('200-123456789', 'Harry Potter 3', 'Sequel of Harry Potter 2', 200, 'Ongoing', NULL, 'HPPS', 12, 393, 'MPH1005', 'HP12', 'MYS', '1-A');
+
+INSERT INTO BOOK (bookISBN, bookTitle, bookSummary, bookPages, bookStatus, bookCover, genKey, authorID, ratingID, publisherID, seriesID, langID, shelfID)
+VALUES ('004-123456789', 'Pinnochio', 'Woodman with long nose', 230, 'Ongoing', NULL, 'PINNO2', 13, 392, 'MPH1005', 'PINNOCHIO', 'MYS', '2-B');
+
+INSERT INTO DONATION (donateID, donateDate, bookID)
+VALUES ('DO-1', '2018-02-20', '004-123456789');
+
+INSERT INTO DONATION (donateID, donateDate, bookID)
+VALUES ('DO-2', '2018-02-26', '500-234567890');
+
+INSERT INTO DONATION (donateID, donateDate, bookID)
+VALUES ('DO-3', '02-2018-15', '415-345678902');
+
+INSERT INTO DONATION (donateID, donateDate, bookID)
+VALUES ('DO-4', '02-2018-25', '978-123456789');
+
+INSERT INTO DONATION (donateID, donateDate, bookID)
+VALUES ('DO-5', '08-2018-17', '133-123456789');
+
+-- Part 2
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (312, 50.00, '11-01-2020', 1);
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (313, 30.00, '21-01-2020', 2);
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (314, 35.00, '17-02-2020', 3);
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (315, 37.00, '15-05-2020', 4);
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (316, 2.00, '11-06-2020', 2);
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (317, 16.00, '27-08-2020', 5);
+
+INSERT INTO FINES (fineID, fineAmount, fineDate, borrowerID)
+VALUES (318, 4.00, '20-12-2020', 1);
+
+INSERT INTO PAYMENT (paymentID, paymentDate, paymentAmount, paymentReceipt, fineID)
+VALUES (936, '2021-01-20', 60.00, NULL, 312);
+
+INSERT INTO PAYMENT (paymentID, paymentDate, paymentAmount, paymentReceipt, fineID)
+VALUES (937, '2021-10-02', 32.00, NULL, 313);
+
+INSERT INTO PAYMENT (paymentID, paymentDate, paymentAmount, paymentReceipt, fineID)
+VALUES (938, '2021-05-03', 37.00, NULL, 314);
+
+INSERT INTO PAYMENT (paymentID, paymentDate, paymentAmount, paymentReceipt, fineID)
+VALUES (939, '2021-06-27', 39.00, NULL, 315);
+
+INSERT INTO PAYMENT (paymentID, paymentDate, paymentAmount, paymentReceipt, fineID)
+VALUES (940, '2021-09-28', 5.00, NULL, 316);
+
+INSERT INTO REVIEW (reviewID, reviewComment, reviewDate, userID, bookID)
+VALUES (24, 'A really interesting book to read', '17-10-2021', 1, '978-123456789');
+
+INSERT INTO REVIEW (reviewID, reviewComment, reviewDate, userID, bookID)
+VALUES (25, 'Easy to read', '19-09-2021', 3, '133-123456789');
+
+INSERT INTO AWARD (awardID, awardName, awardYear, bookID)
+VALUES (913920, 'Diamond Award', 2005, '978-123456789');
+
+INSERT INTO AWARD (awardID, awardName, awardYear, bookID)
+VALUES (014060, 'Best Story Award', 2008, '004-123456789');
+
+INSERT INTO BORROW (borrowID, borrowDate, staffID, borrowerID, cartID, returnID)
+VALUES (14, '2020-05-08', 1, 1, 1, 55);
+
+INSERT INTO BORROW (borrowID, borrowDate, staffID, borrowerID, cartID, returnID)
+VALUES (15, '2020-09-08', 8, 3, 2, NULL);
+
+INSERT INTO RETURNLIB (returnID, returnDate, cartID)
+VALUES (55, '2020-08-26', 2);
+
+INSERT INTO CART (cartID, bookID)
+VALUES (1, '978-123456789');
+
+INSERT INTO CART (cartID, bookID)
+VALUES (1, '133-123456789');
+
+INSERT INTO CART (cartID, bookID)
+VALUES (2, '302-123456789');
+
+INSERT INTO CART (cartID, bookID)
+VALUES (2, '370-345678901');
+
+INSERT INTO RESERVATION (reservationID, reservationDate, borrowerID, bookID)
+VALUES (221, '2023-09-11', 1, '978-123456789');

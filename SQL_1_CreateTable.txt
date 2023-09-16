@@ -1,0 +1,212 @@
+CREATE TABLE USERLIB (  
+  userID NUMBER(9) NOT NULL,  
+  name VARCHAR2(100) NOT NULL,  
+  phoneNo VARCHAR2(13) NOT NULL,  
+  address VARCHAR2(255) NOT NULL,  
+  privilege VARCHAR2(255),  
+  dateOfBirth DATE(10) NOT NULL,  
+  userPhoto BLOB,  
+  PRIMARY KEY (userID)  
+) 
+;
+
+CREATE TABLE MEMBERSHIP (  
+  memberID NUMBER(9) NOT NULL,  
+  memberType VARCHAR2(50) NOT NULL,  
+  startDate DATE(10),  
+  endDate DATE(10),  
+  memberEmail VARCHAR2(254) NOT NULL,  
+  memberStatus VARCHAR2(255) NOT NULL,  
+  borrowLimit NUMBER(10) NOT NULL,  
+  PRIMARY KEY (memberID)  
+) 
+;
+
+CREATE TABLE BORROWER (  
+  borrowerID NUMBER(9) NOT NULL,  
+  userID NUMBER(9) NOT NULL,  
+  memberID NUMBER(9),  
+  PRIMARY KEY (borrowerID),  
+  FOREIGN KEY (memberID) REFERENCES MEMBERSHIP(memberID),
+  FOREIGN KEY (userID) REFERENCES USERLIB(userID) ON DELETE CASCADE
+) 
+;
+
+CREATE TABLE STAFF (  
+  staffID VARCHAR2(9) NOT NULL,  
+  staffRole VARCHAR2(50) NOT NULL,  
+  userID NUMBER(9) NOT NULL,  
+  PRIMARY KEY (staffID),  
+  FOREIGN KEY (userID) REFERENCES USERLIB(userID) ON DELETE CASCADE 
+) 
+;
+
+CREATE TABLE AUTHOR (  
+  authorID NUMBER(9) NOT NULL,  
+  authorName VARCHAR2(100) NOT NULL,  
+  PRIMARY KEY (authorID)  
+) 
+;
+
+CREATE TABLE PUBLISHER (  
+  publisherID VARCHAR2(30) NOT NULL,  
+  publisherName VARCHAR2(100) NOT NULL,  
+  publisherPhone VARCHAR2(13) NOT NULL,  
+  PRIMARY KEY (publisherID)  
+) 
+;
+
+CREATE TABLE GENRE (  
+  genreID NUMBER(9) NOT NULL,  
+  genreName VARCHAR2(50) NOT NULL,  
+  genreDesc VARCHAR2(100) NOT NULL,  
+  PRIMARY KEY (genreID)  
+) 
+;
+
+CREATE TABLE LANGUAGELIB (  
+  langID VARCHAR2(9) NOT NULL,  
+  langName VARCHAR2(100) NOT NULL,  
+  PRIMARY KEY (langID)  
+) 
+;
+
+CREATE TABLE FINES (  
+  fineID NUMBER(9) NOT NULL,  
+  fineAmount NUMBER(9) NOT NULL,  
+  fineDate VARCHAR2(10) NOT NULL,  
+  borrowerID NUMBER(9) NOT NULL,  
+  PRIMARY KEY (fineID),  
+  FOREIGN KEY (borrowerID) REFERENCES BORROWER(borrowerID)  
+) 
+;
+
+CREATE TABLE RATING (  
+  ratingID NUMBER(9) NOT NULL,  
+  ratingName VARCHAR2(10) NOT NULL,  
+  ratingDesc VARCHAR2(100) NOT NULL,  
+  PRIMARY KEY (ratingID)  
+) 
+;
+
+CREATE TABLE PAYMENT (  
+  paymentID NUMBER(9) NOT NULL,  
+  paymentDate DATE(10) NOT NULL,  
+  paymentAmount NUMBER(9) NOT NULL,  
+  paymentReceipt BFILE,  
+  fineID NUMBER(9) NOT NULL,  
+  PRIMARY KEY (paymentID),  
+  FOREIGN KEY (fineID) REFERENCES FINES(fineID) ON DELETE CASCADE 
+) 
+;
+
+CREATE TABLE BOOKSERIES (  
+  seriesID VARCHAR2(9) NOT NULL,  
+  seriesTitle VARCHAR2(100) NOT NULL,  
+  seriesDesc VARCHAR2(100),  
+  PRIMARY KEY (seriesID)  
+) 
+;
+
+CREATE TABLE SHELF (  
+  shelfID VARCHAR2(9) NOT NULL,  
+  shelfName VARCHAR2(15) NOT NULL,  
+  shelfCapacity NUMBER(6) NOT NULL,  
+  PRIMARY KEY (shelfID)  
+) 
+;
+
+CREATE TABLE BORROW(   
+  borrowID NUMBER(9) NOT NULL,   
+  borrowDate VARCHAR2(10) NOT NULL,   
+  staffID VARCHAR2(9) NOT NULL,   
+  borrowerID NUMBER(9) NOT NULL,   
+  cartID NUMBER(9) NOT NULL,   
+  returnID NUMBER(9),   
+  PRIMARY KEY (borrowID)  
+) 
+;
+
+CREATE TABLE BOOK (   
+  bookISBN VARCHAR2(13) NOT NULL,   
+  bookTitle VARCHAR2(255) NOT NULL,   
+  bookSummary VARCHAR2(500),   
+  bookPages NUMBER(6) NOT NULL,   
+  bookStatus VARCHAR2(255),   
+  bookCover BLOB,   
+  genKey VARCHAR2(20) NOT NULL,   
+  authorID NUMBER(9) NOT NULL,   
+  ratingID NUMBER(9) NOT NULL,   
+  publisherID VARCHAR2(30) NOT NULL,   
+  seriesID VARCHAR2(9) NOT NULL,   
+  langID VARCHAR2(9) NOT NULL,      
+  shelfID VARCHAR2(9) NOT NULL,   
+  PRIMARY KEY (bookISBN) 
+) 
+;
+
+CREATE TABLE GENREBOOK (   
+  genKey VARCHAR2(20) NOT NULL,    
+  genreID NUMBER(9) NOT NULL,   
+  PRIMARY KEY (genKey, genreID),
+  FOREIGN KEY (genreID) REFERENCES GENRE(genreID) ON DELETE CASCADE
+) 
+;
+
+CREATE TABLE REVIEW (   
+  reviewID NUMBER(9) NOT NULL,   
+  reviewComment VARCHAR2(100) NOT NULL,   
+  reviewDate VARCHAR2(10) NOT NULL,   
+  userID NUMBER(9) NOT NULL,   
+  bookID VARCHAR2(13) NOT NULL,   
+  PRIMARY KEY (reviewID),   
+  FOREIGN KEY (userID) REFERENCES USERLIB(userID) ON DELETE CASCADE,   
+  FOREIGN KEY (bookID) REFERENCES BOOK(bookISBN) ON DELETE CASCADE  
+) 
+;
+
+CREATE TABLE AWARD (   
+  awardID VARCHAR2(9) NOT NULL,   
+  awardName VARCHAR2(100) NOT NULL,   
+  awardYear NUMBER(4) NOT NULL,   
+  bookID VARCHAR2(13) NOT NULL,   
+  PRIMARY KEY (awardID),   
+  FOREIGN KEY (bookID) REFERENCES BOOK(bookISBN) ON DELETE CASCADE  
+) 
+;
+
+CREATE TABLE RESERVATION (   
+  reservationID VARCHAR2(9) NOT NULL,   
+  reservationDate DATE(10) NOT NULL,   
+  borrowerID NUMBER(9) NOT NULL,   
+  bookID VARCHAR2(13) NOT NULL,   
+  PRIMARY KEY (reservationID),   
+  FOREIGN KEY (borrowerID) REFERENCES BORROWER(borrowerID) ON DELETE CASCADE,   
+  FOREIGN KEY (bookID) REFERENCES BOOK(bookISBN) ON DELETE CASCADE   
+) 
+;
+
+CREATE TABLE DONATION (   
+  donateID VARCHAR2(9) NOT NULL,   
+  donateDate DATE(10) NOT NULL,   
+  bookID VARCHAR2(13) NOT NULL,   
+  PRIMARY KEY (donateID),   
+  FOREIGN KEY (bookID) REFERENCES BOOK(bookISBN) ON DELETE CASCADE  
+) 
+;
+CREATE TABLE CART (   
+  cartID NUMBER(9) NOT NULL,   
+  bookID VARCHAR2(13) NOT NULL,   
+  PRIMARY KEY (cartID, bookID),
+  FOREIGN KEY (bookID) REFERENCES BOOK(bookISBN) ON DELETE SET NULL  
+) 
+;
+
+CREATE TABLE RETURNLIB (   
+  returnID NUMBER(9) NOT NULL,   
+  returnDate DATE(10) NOT NULL,   
+  cartID NUMBER(9) NOT NULL,   
+  PRIMARY KEY (returnID, cartID) 
+) 
+;
+

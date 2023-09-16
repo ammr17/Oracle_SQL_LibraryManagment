@@ -1,0 +1,62 @@
+-- Query 1: 
+
+SELECT * FROM USERLIB;
+
+-- Query 2: Projection on Single Column 
+
+SELECT bookTitle FROM BOOK;
+
+-- Query 3: Selection Using Logical Operator
+
+SELECT * FROM PAYMENT WHERE paymentAmount > 30;
+
+-- Query 4: Third Query (Pattern Matching - LIKE Operator)
+
+SELECT * FROM BOOK WHERE booktitle LIKE 'P%';
+
+-- Query 5: Join (Inner Join):
+
+SELECT staff.staffID, staff.staffRole, userlib.name
+FROM staff
+INNER JOIN userlib ON staff.userID = userlib.userID;
+
+-- Query 6: Aggregate Function (COUNT): 
+
+SELECT count(*) FROM book;
+
+-- Query 7: Aggregate Function(SUM):
+
+SELECT SUM(fineAmount) FROM FINES;
+
+-- Query 8: Aggregate Function (AVG): 
+
+SELECT AVG(paymentAmount) FROM PAYMENT;
+
+-- Query 9: Aggregate Function (MIN): 
+
+SELECT MIN(paymentAmount) FROM PAYMENT;
+
+-- Query 10: Aggregate Function (MAX): 
+
+SELECT MAX(paymentAmount) FROM PAYMENT;
+
+-- Query 11: Group By
+
+SELECT staffRole FROM STAFF GROUP BY staffRole;
+
+-- Query 12: Order By (Ascending): 
+
+SELECT * FROM FINES ORDER BY fineAmount ASC;
+
+-- Query 13: Order By(Descending)
+
+SELECT * FROM FINES ORDER BY fineAmount DESC;
+
+-- Query 14: Subquery
+
+SELECT bookTitle FROM book WHERE seriesID = (SELECT seriesID FROM bookseries WHERE seriesTitle = 'Harry Potter series');
+
+-- Query 15: Using logical operator AND
+
+SELECT bookISBN FROM BOOK;
+WHERE langID = 'ENG' AND bookStatus = 'Completed';
